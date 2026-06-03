@@ -3,7 +3,7 @@ from lexipath import LexiPathEngine
 def run_demo():
     # Initializing the engine with low thresholds for demonstration purposes
     # (n=2 views to master, m=50% vocabulary overlap required)
-    engine = LexiPathEngine(required_views=6, required_percentage=0.80)
+    engine = LexiPathEngine(required_views=2, required_percentage=0.50)
 
     # Bootstrapping: Simulate a basic vocabulary so the user can read the first text
     starting_vocabulary = "the a cat dog eats mat is on".split()
@@ -25,12 +25,12 @@ def run_demo():
 
     # Path Progression Simulation
     print("\n--- Reading Gateway Text B to learn vocabulary ---")
-    engine.read_text(library["Text B"])
+    engine.read_text(library["Text B (Gateway)"])
     # Reading it a second time so the new words "red" and "apple" reach count=2 (mastered)
-    engine.read_text(library["Text B"]) 
+    engine.read_text(library["Text B (Gateway)"]) 
 
     print("\n--- Re-evaluating Target Text C ---")
-    accessible, score = engine.evaluate_accessibility(library["Text C"])
+    accessible, score = engine.evaluate_accessibility(library["Text C (Target)"])
     print(f"Text C: Accessible now? {accessible} (New Overlap Score: {score:.2%})")
 
 if __name__ == "__main__":
