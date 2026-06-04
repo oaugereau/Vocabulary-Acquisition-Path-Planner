@@ -7,7 +7,7 @@ import re
 class LexiPathEngine:
 
     def __init__(
-        self, form_to_headword, headword_info=None, required_views=10
+        self, form_to_headword={}, headword_info=None, required_views=10
     ):
         """Initializes the engine with the BNC/COCA word family map.
 
@@ -169,9 +169,9 @@ if __name__ == "__main__":
 
     # --- 3. INITIALIZE ENGINE ---
     engine = LexiPathEngine(
-        form_to_headword=mock_form_to_headword,
-        headword_info=mock_headword_info,
-        required_views=10,
+        #form_to_headword=mock_form_to_headword,
+        #headword_info=mock_headword_info,
+        #required_views=10,
     )
 
     # --- 4. BATCH READ TEXT FILES FROM FOLDER ---
