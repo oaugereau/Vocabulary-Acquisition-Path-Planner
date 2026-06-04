@@ -97,8 +97,8 @@ class LexiPathEngine:
             chunked_lines = [
                 families[i : i + 8] for i in range(0, len(families), 8)
             ]
-            for line in chunked_lines:
-                print("   " + ", ".join(line))
+            #for line in chunked_lines:
+            #    print("   " + ", ".join(line))
         print("========================================")
 
 
